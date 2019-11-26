@@ -16,7 +16,7 @@ import src.utils as utils
 from src.config import opt
 import time
 
-SAVE_FLAG = 0
+SAVE_FLAG = 1
 THRESH = 0.01
 IM_RESIZE = False
 
@@ -63,8 +63,8 @@ def detect(img_path, model_path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--img_path", type=str, help="test image path")
-    parser.add_argument("--model_path", type=str, default='./checkpoints/sess:2/head_detector08120858_0.682282441835')
+    parser.add_argument("--img_path", type=str, default="./test_img/head.jpg")
+    parser.add_argument("--model_path", type=str, default='./model/head_detector_final')
     args = parser.parse_args()
     detect(args.img_path, args.model_path)
     # model_path = './checkpoints/sess:2/head_detector08120858_0.682282441835'
